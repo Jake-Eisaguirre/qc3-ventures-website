@@ -1,0 +1,432 @@
+/* QC3 Ventures - Main Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables - Brand Colors */
+:root {
+  /* Primary Colors */
+  --color-charcoal: #1a1a2e;
+  --color-charcoal-light: #2a2d42;
+  --color-gray-bg: #f5f5f5;
+  --color-gray-content: #e0e0e0;
+  
+  /* Accent Colors */
+  --color-gold: #D4AF37;
+  --color-gold-light: #F4E4BC;
+  
+  /* Supporting Colors */
+  --color-slate-dark: #4a5568;
+  --color-slate-light: #718096;
+  --color-white: #FFFFFF;
+  
+  /* Typography */
+  --font-family: 'Inter', sans-serif;
+  
+  /* Spacing (8px base unit) */
+  --spacing-xs: 0.5rem;  /* 8px */
+  --spacing-sm: 1rem;    /* 16px */
+  --spacing-md: 1.5rem;  /* 24px */
+  --spacing-lg: 2rem;    /* 32px */
+  --spacing-xl: 3rem;    /* 48px */
+  --spacing-2xl: 4rem;   /* 64px */
+  --spacing-3xl: 6rem;   /* 96px */
+  
+  /* Border radius */
+  --border-radius: 4px;
+  
+  /* Transitions */
+  --transition: 200ms ease-in-out;
+  
+  /* Container */
+  --container-max-width: 1200px;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: #2C2C2C;
+  background-color: var(--color-gray-bg);
+}
+
+/* Typography Scale */
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: var(--color-charcoal);
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  line-height: 1.4;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-sm);
+}
+
+small {
+  font-size: 0.875rem;
+  color: var(--color-slate-light);
+}
+
+/* Container and Grid */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-md);
+}
+
+/* Header and Navigation */
+header {
+  background: var(--color-white);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-charcoal);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-charcoal);
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--color-gold);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: all var(--transition);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--color-gold);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-gold-light);
+  color: var(--color-charcoal);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-charcoal);
+  border: 2px solid var(--color-charcoal);
+}
+
+.btn-secondary:hover {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+/* Hero Section */
+.hero {
+  padding: var(--spacing-3xl) 0;
+  background: linear-gradient(135deg, var(--color-gray-content) 0%, var(--color-white) 100%);
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: var(--spacing-md);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .tagline {
+  font-size: 1.25rem;
+  color: var(--color-slate-dark);
+  margin-bottom: var(--spacing-xl);
+  font-weight: 500;
+}
+
+.hero .cta-group {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Hero Title with Logo */
+.hero-title-container {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-logo {
+  width: 150px;
+  height: auto;
+  border-radius: var(--border-radius);
+  margin: 0 auto var(--spacing-md);
+  display: block;
+}
+
+/* Team Avatar Styles */
+.team-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--spacing-md);
+  display: block;
+  border: 3px solid rgba(51, 65, 85, 0.1);
+}
+
+/* Ensure text on dark backgrounds stays light */
+section[style*="background: var(--color-charcoal)"] h2,
+section[style*="background: var(--color-charcoal)"] p {
+  color: var(--color-white) !important;
+}
+
+/* Sections */
+.section {
+  padding: var(--spacing-3xl) 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-description {
+  max-width: 600px;
+  margin: var(--spacing-md) auto var(--spacing-xl);
+  text-align: center;
+  font-size: 1.125rem;
+  color: var(--color-slate-dark);
+}
+
+/* Cards */
+.card-grid {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xl);
+  border: 1px solid rgba(51, 65, 85, 0.1);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-bottom: var(--spacing-md);
+}
+
+.card p {
+  color: var(--color-slate-dark);
+}
+
+/* Portfolio specific */
+.portfolio-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+}
+
+.portfolio-status {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--color-gold);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: var(--border-radius);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-sm);
+}
+
+.portfolio-status.stealth {
+  background: var(--color-slate-dark);
+}
+
+.portfolio-status.development {
+  background: var(--color-charcoal);
+}
+
+/* Team/About */
+.team-grid {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.team-member {
+  text-align: center;
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xl);
+  border: 1px solid rgba(51, 65, 85, 0.1);
+}
+
+/* Team member images removed for QC3 Ventures rebuild */
+
+.team-member h4 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.team-member .role,
+.card .role {
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.team-member .credentials {
+  font-size: 0.875rem;
+  color: var(--color-slate-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Footer */
+footer {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+}
+
+footer p {
+  color: var(--color-slate-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --spacing-3xl: 3rem;
+  }
+  
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+  
+  .nav-menu {
+    gap: var(--spacing-md);
+  }
+  
+  .hero .cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .grid-12 {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-title-container {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .hero-logo {
+    width: 120px;
+  }
+  
+  .team-avatar {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Focus States for Accessibility */
+.nav-link:focus,
+.btn:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling for same-page navigation */
+html {
+  scroll-behavior: smooth;
+}
